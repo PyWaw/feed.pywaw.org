@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>PyWaw Feed</title>
@@ -33,7 +33,10 @@
     <div class="container">
         <div id="tweets">
             <ul class="tweets">
-                <li class="tweets__item" v-for="tweet in tweets">${ tweet.text }</li>
+                <li class="tweets__item" v-for="tweet in tweets">
+                    <img class="tweets__avatar" v-bind:src="tweet.user.profile_image_url">
+                    <p class="tweets__text">${ tweet.text }</p>
+                </li>
             </ul>
         </div>
     </div>
