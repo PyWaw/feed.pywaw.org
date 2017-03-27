@@ -47,12 +47,9 @@ async def tweets_list_handler(_):
 async def tweets_ws_handler(request):
     ws = web.WebSocketResponse()
     await ws.prepare(request)
-    async with subscribe(new_tweets_stream) as ys:
-        async for tweet in ys:
-            try:
-                ws.send_json(tweet)
-            except TypeError:
-                print(tweet)
+    async with subscribe(new_tweets_stream) as stream:
+        async for tweet in stream:
+            ws.send_json(tweet)
     return ws
 
 
