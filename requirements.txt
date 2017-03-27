@@ -1,0 +1,4 @@
+aiohttp==2.0.2
+git+git://github.com/odrling/peony-twitter@8a2e80d#egg=peony-twitter
+git+git://github.com/dbrattli/aioreactive@442adf6#egg=aioreactive
+aiohttp-jinja2==0.13.0
