@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt
 
 ADD / /
 
-CMD python app.py
+CMD python -m aiohttp.web -H 0.0.0.0 -P 8000 feed.app:create_app
